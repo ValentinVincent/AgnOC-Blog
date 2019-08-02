@@ -1,0 +1,12 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0 }">
+  <div class="row">
+    <h4 [ngStyle]="{color: getColor()}" class="col-xs-6">{{ getTitle() }}</h4>
+    <p class="col-xs-6">{{ getCreationDate() }}</p>
+  </div>
+  <!-- <p>{{ getDate() }}</p> -->
+  <p [ngStyle]="{color: getColor()}">{{ getContent() }}</p>
+  <button class="btn btn-danger" (click)="dislikeIt()">Don't Love it</button>
+  <button class="btn btn-success" (click)="likeIt()">Love it</button>
+</li>
